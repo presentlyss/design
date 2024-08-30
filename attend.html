@@ -1,0 +1,282 @@
+
+<!doctype html>
+<html lang="eng">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        #form{
+            margin-inline:auto;
+        }
+        fieldset {
+            border-radius: 5px;
+            height: 200px;
+            width: 500px;
+        }
+
+        
+    ul{
+        list-style: none;
+        display:flex;
+        flex-wrap: wrap;
+        padding: 0px ;
+        margin:0px !important;
+        
+    }
+
+    li{
+text-align: center;
+        width:14.2%;
+    }
+    
+    </style>
+</head>
+
+<body>
+<div class="box">
+    <div id="form">
+        <fieldset>
+            <div class="fields">
+                <lable>Name :</lable>
+                <input name="text" Id="Name"><br><br>
+                <lable>Password :</lable>
+                <input name="pass" Id="pass"><br><br>
+                
+                <button id="button" onclick="submit()" >Signup</button>
+            </div>
+        </fieldset>
+    </div>
+
+    <div id="form2">
+        <fieldset>
+            <div class="fields">
+                <lable>Name :</lable>
+                <input type="text"  class="user"><br><br>
+                <lable>Password :</lable>
+                <input type="text" name="pass" Id="pass2"><br><br>
+                <lable>Confirm Password :</lable>
+                <input name="cpass" Id="cpass2"><br><br>
+
+                <button id="button2" onclick="clc()">Signup</button>
+            </div>
+        </fieldset>
+    </div>
+</div>
+
+<ul>
+    <!-- dates print   -->
+</ul>
+</body>
+
+
+
+<h1 id="login"></h1>
+<script>
+    /*const info=[{Name:"Vijay Tiwari", Password: "345612", Department: "Non-Teaching Staff (Backend Developer)",
+                location: "Manit College Bhopal" }, {Name:"Ayush Dwivedi", Password: "789456", Department: "Non-Teaching Staff (Full Stack Developer)",
+                location: "Manit College Bhopal" } ]
+
+    let login=document.getElementById("login");
+
+     
+
+
+     function Submit(){
+console.log("check submit")
+        let name=document.getElementById("Name").value;
+    let pass=document.getElementById("pass").value;
+
+
+    
+  let  auth=info.find((i)=> i.Name==name && i.Password==pass );
+
+console.log(auth);
+
+checklogin(auth);
+      //  validation(name, pass);
+     }
+
+
+     function checklogin(i){
+                console.log("check login");
+                if (i){
+                let entloc;
+
+                login.innerHTML="login success";
+                console.log("Choose your location");
+                
+
+            }
+            else{
+                console.log("else work");
+                login.innerHTML="login failed";
+                
+            }}
+
+
+
+
+
+    // function validation(name, pass){
+    //     console.log(name);
+
+    //     let auth= "check auth";
+    //     console.log(auth);
+
+    //     auth=info.find((i)=>{ i.Name==name });
+
+    //         console.log(auth);
+
+    //         
+    //     }
+
+
+
+   // }*/
+   
+// / '2024-08-01'
+
+   let date = new Date();                
+let num= [31, 28, 31,30, 31, 30 , 31 ,31 , 30 , 31, 30 , 31 ];
+let monthsname=['jan','feb','march','april','may','june','july','aug','sep','oct','nov','dec'];
+let month=date.getMonth();
+let month2=date.getMonth();
+let today=date.getDate();
+let year=date.getFullYear();
+let ul=document.querySelector('ul');
+let body1=document.querySelector('.box');
+
+
+
+   let obj={name:"", pass:"" };
+    function clc(){
+
+    let name=document.querySelector(".user").value;
+    let pass=document.getElementById("pass2").value;
+    let cpass=document.getElementById('cpass2').value;
+
+console.log('hello')
+
+    
+        console.log(name)
+        
+    if (pass===cpass){
+        console.log("check if");
+        
+         
+            obj.name=name;
+            obj.pass=pass;
+        
+    console.log(obj);
+    }
+    else{
+
+        console.log("Password not match");
+    }}
+
+    // function submit(){
+    //     let lname=document.getElementById('Name').value;
+    //     let lpass=document.getElementById('pass').value;    
+    //     if(lname==obj.name && lpass==obj.pass){
+           
+    //     }
+    //     else{
+    //          console.log("Invalid User");
+    // }}
+
+    
+
+
+
+
+function months(){
+console.log('next');
+
+
+    
+    ul.innerHTML='';
+   monthbox.innerHTML=monthsname[month];
+
+    for(let i=1; i<=num[month]; i++){
+        let day = document.createElement('li');
+
+        day.innerHTML=`<button>${i}</button>`;
+
+        if(today==i && month==month2){
+            day.style.background="green";
+        }
+        else{
+            day.style.background="white";
+        }
+
+
+        ul.appendChild(day);
+
+       
+
+    }
+
+    if(month<11){
+        month++;
+    }
+    else{
+        month=0;
+    }
+
+   
+    
+   
+}
+       
+        function submit(){
+        let lname=document.getElementById('Name').value;
+        let lpass=document.getElementById('pass').value;
+        let form=document.querySelector('#form');  
+        let form2=document.querySelector('#form2'); 
+        let body1=document.querySelector('.box'); 
+        let monthbox=document.getElementById('monthbox');
+
+
+        
+        
+        if(lname===obj.name && lpass===obj.pass){
+          //  window.location.href= 'cal.html';
+          body1.innerHTML=`<div id="monthbox"></div> <button onclick="prevmonths()">left</button> <button onclick="months()">right</button>  <ul>f</ul>`;
+            console.log('welcome');
+            months();
+            
+        }
+        else{
+             console.log("Invalid User");
+    }}
+
+    
+
+    function prevmonths(){
+    console.log('prev');
+
+if(month>=0){
+    month--;
+}
+else{
+    month=11;
+}
+
+ul.innerHTML='';
+monthbox.innerHTML=monthsname[month];
+
+for(let i=1; i<=num[month]; i++){
+    let day = document.createElement('li');
+    day.textContent=i;
+    ul.appendChild(day);
+
+}
+
+
+}
+    
+
+</script>
+
+</html>

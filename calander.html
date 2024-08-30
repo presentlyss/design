@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="eng">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Calendar</title>
+
+</head>
+<style>
+    body {
+        background-color: black;
+        color: white;
+    }
+
+    .box {
+        background-color: rgb(18, 18, 191);
+        position: relative;
+        width: 60%;
+        height: 600px;
+        margin: auto;
+        margin-top: 65px;
+    }
+
+    .head {
+        display: flex;
+        padding: 10px;
+    }
+
+    button {
+        height: 20px;
+        width: 20px;
+        text-align: center;
+    }
+
+    button {
+        background-color: rgba(58, 110, 208, 50);
+        border-radius: 50%;
+        border: none;
+        width: 30px;
+        height: 30px;
+        
+    }
+    button:hover{
+        background-color: black;
+    }
+
+    i{
+        padding: auto;
+        color: white;
+        margin: auto;
+    }
+
+    ul {
+
+        padding-top: -10px;
+        /*width: 100px;
+        background-color: rgb(78, 104, 238);
+        list-style-type: none;*/
+    }
+
+    .month {
+
+        width: 100px;
+        text-align: center;
+        background-color: rgb(78, 104, 238);
+        list-style-type: none;
+        padding: 5px;
+    }
+
+    .month:hover {
+        width: 100%;
+        background-color: white;
+        color: rgb(47, 156, 214);
+
+    }
+
+    #feb,
+    #march,
+    #april,
+    #may,
+    #june,
+    #july,
+    #aug,
+    #sept,
+    #oct,
+    #nov,
+    #dec {
+        display: none;
+    }
+
+    .bottom_content {
+        display: flex;
+        justify-content: space-around;
+    }
+
+    #highlight {
+        background-color: rgb(58, 110, 208);
+        height: 500px;
+        width: 30%;
+        border-radius: 10px;
+        margin-inline: 10px;
+    }
+
+    #numbers {
+                background-color: rgb(58, 110, 208);
+        height: 500px;
+        width: 600px;
+        border-radius: 10px;
+        margin-inline: 10px;
+        
+    }
+    .weeks{
+        display: flex;
+        justify-content: space-around;       
+        margin: 10px;
+
+        
+    }
+    span{
+        padding-left: 50px;
+    }
+    input{
+        width: 100px;
+        margin-inline: 10px;
+        background-color: rgb(58, 110, 208);
+        border: none;
+        border-radius: 10px;
+        color: white;
+    }
+    input::placeholder{
+        color: white;
+        text-align: center;
+        
+    }
+    option::-ms-value{
+        background-color: blue;
+        color: white;
+    }
+    b{
+        font-size: 12px;
+    }
+    #calander{
+        
+    }
+    
+</style>
+
+<body>
+    <!--complete box with background color dark blue-->
+    <div class="box">
+
+        <!-- top design content -->
+        <div class="head">
+            <button><i class="fa-duotone fa-solid fa-greater-than"></i> </button>
+
+            <input list="calander" placeholder="January" style="width: 100px; margin-inline: 10px; background-color: rgb(58, 110, 208);">
+
+                <datalist id="calander">
+                    <option value="January"></option>
+                    <option value="February"></option>
+                    <option value="March"></option>
+                    <option value="April"></option>
+                    <option value="May"></option>
+                    <option value="June"></option>
+                    <option value="July"></option>
+                    <option value="August"></option>
+                    <option value="September"></option>
+                    <option value="October"></option>
+                    <option value="November"></option>
+                    <option value="December"></option>
+
+                </datalist>
+
+            
+            <button><i class="fa-duotone fa-solid fa-greater-than"></i> </button>
+            <span>2024</span> 
+        </div>
+        <!-- whole bottom content-->
+        <div class="bottom_content">
+            <!-- bottom left content box -->
+            <div id="highlight">
+
+            </div>
+            <!--Main date area content where the javascript is to applied-->
+            <div id="numbers">
+                <div class="weeks">
+                    <div>Sunday</div>  
+                    <div>Monday</div>
+                    <div>Tuesday</div>  
+                    <div>Wednesday</div> 
+                    <div>Thursday</div>  
+                    <div>Friday</div>
+                    <div>Saturday</div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</body>
+
+</html>
